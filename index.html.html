@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Library Catalog — Search</title>
+
+    <!---------------- Link to external CSS file ---------------------------------------------------------------->
+
+      <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <h2>📚Library Catalog</h2>
+        <img src="Library Logo (Upscaled).png" alt="Library Logo" class="logo">
+      </div>
+      <div class="dept-heading">Library – Department of Electronics</div>
+
+    </header>
+
+
+      <div class="searchpanel" role="search">
+<div class="search-input-wrap">
+  <textarea id="searchInput" placeholder="Book or Author or Publication" rows="1" aria-label="Search"></textarea>
+  <button id="clearBtn" class="clear-btn" aria-label="Clear search" title="Clear search">
+    <img src="TC-2.svg" alt="Clear" />
+  </button>
+</div>
+
+
+        <button id="searchBtn" class="btn-primary">Search</button>
+          
+        <!---------- Buttons container will be toggled by JS ------------------------->
+
+        <div id="searchTypeButtonsContainer" class="controls">
+          <button id="searchByTitle" class="searchTypeBtn" data-type="rack">Rack Number</button>
+        
+          <!-- Below lines adds two more buttons in filter, "Book Name, Author , Publication" but these are disabled by default,
+                because adding more buttons , disrupts the UI arrangement.
+
+                <button id="searchByAuthor" class="searchTypeBtn" data-type="author">Author</button>
+                <button id="searchByPublisher" class="searchTypeBtn" data-type="publisher">Publication</button>
+          -->
+
+        </div>
+      </div>
+        
+      <!-------------------- Search Results Section -------------------------------------------->   
+
+        <section id="searchResultsSection" style="display:none;">
+  <div class="results-header">
+    <h3 class="searched-title">Searched Books</h3>
+    <p id="resultsCount" class="results-count">Number of results: 0</p>
+  </div>
+
+  <div id="searchResultsList"></div>
+  <p id="noResultsMessage" style="display:none;">No Book available.</p>
+</section>
+
+
+      <!-------------------- Scrolling Image Gallery Section ----------------------------->
+
+        <!-- Add this inside the .app container, before the footer -->
+
+        <div class="image-scroll-container" aria-label="Scrolling library images" role="region" style="overflow:hidden; margin: 20px 0; border-radius: 12px;">
+      
+          <div class="image-scroll-track" style="display: flex; width: max-content; animation: scrollImages 40s linear infinite;">
+            <img src="Book 1.png" alt="Library image 1" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="IOT Book.png" alt="Library image 2" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="Measurement Book.png" alt="Library image 3" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="Magzine 1.png" alt="Library image 4" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="VLSI Book.png" alt="Library image 5" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="Magzine 2.png" alt="Library image 6" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+        
+            <!-- repeat same images for smooth loop -->
+        
+            <img src="VLSI Book - 2.png" alt="Library image 1" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="ANN Book.png" alt="Library image 2" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="DSP Book.png" alt="Library image 3" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="ANSI C Book.png" alt="Library image 4" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3" alt="Library image 5" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+            <img src="C Programming.png" alt="Library image 6" style="height: 160px; margin-right: 12px; border-radius: 8px;" />
+          </div>
+        </div>
+
+      
+      <!---------------------------- Library Rules Section -------------------------------------------------------------------------------------------------------------------->
+
+        <section class="rules" aria-label="Library Rules">
+          <h2>📚 Library Rules</h2>
+          <div class="rules-container">
+
+            <!---- Rules written on the left side  ---->
+
+              <ul class="rules-left">
+                <li>Maintain silence inside the library.</li>
+                <li>Keep mobile phones on silent mode.</li>
+                <li>Return borrowed books on time.</li>
+                <li>Do not eat or drink inside the library.</li>
+              </ul>
+
+            <!---- Rules written on the left side  ---->
+            
+              <ul class="rules-right">
+                <li>Do not write or mark in library books.</li>
+                <li>Use computers for education only.</li>
+                <li>Respect library staff and other users.</li>
+                <li>Follow proper checkout procedures.</li>
+                <li>Handle books and materials with care.</li>
+              </ul>
+          </div>
+        </section>
+
+      <!---- Footer Section  ---->
+
+        <footer>© 2025 My Library | All rights reserved.</footer>
+        <footer>Credits : Lecturers & Batch 2024 - 2026</footer>
+        <footer> Website : Mr. Siddhakumar Limje</footer>
+        <footer> Books Digitization : Ms. Affia Hussain , Mr. Prajwal Potbhare</footer>
+  </div>
+
+  <!-------------- Firebase scripts -------------->
+  
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <!-- Link to external JS file -->
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
